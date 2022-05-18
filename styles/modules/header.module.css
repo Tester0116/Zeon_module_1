@@ -1,0 +1,35 @@
+.main-header__nav {
+  padding: 1.55em 145px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-header__logo {
+  width: 120px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.main-header__links-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.main-header__links-block > li {
+  margin-left: 42px;
+}
+
+.main-header__get-appbtn {
+  width: 172px;
+  height: 40px;
+  border-radius: 4px;
+  margin-left: 55px;
+  background: #222222;
+  text-align: center;
+  font-size: 14px;
+  line-height: 18px;
+  color: white;
+}

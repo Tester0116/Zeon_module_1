@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/modules/header.module.css" />
+    <link rel="stylesheet" href="./styles/modules/timer.module.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Module 1</title>
+  </head>
+
+  <body>
+    <!-- ########## HEADER START ########## -->
+    <header class="main-header">
+      <nav class="main-header__nav">
+        <img
+          class="main-header__logo"
+          src="./assets/happy-logo.png"
+          alt="logo"
+        />
+        <ul class="main-header__links-block">
+          <li>
+            <a href="#">Features</a>
+          </li>
+          <li>
+            <a href="#">Pricing</a>
+          </li>
+          <li>
+            <a href="#">Testimonials</a>
+          </li>
+          <li>
+            <a href="#">FAQ</a>
+          </li>
+          <button class="main-header__get-appbtn">GET THIS APP</button>
+        </ul>
+      </nav>
+    </header>
+    <!-- ########## HEADER END ########## -->
+
+    <!-- ########## CONTENT START ########## -->
+    <main>
+      <!-- block with timer start -->
+      <article class="timer-block">
+        <h1 class="timer-block__title">BIG SALE ON LIFETIME PLAN</h1>
+        <h4>there is very little left</h4>
+
+        <div id="timer" class="timer">
+          <div class="timer-number">
+            <span class="days timer-time"></span>
+            <span class="timer-text">Days</span>
+          </div>
+          <div class="timer-number">
+            <span class="hours timer-time"></span>
+            <span class="timer-text">Hours</span>
+          </div>
+          <div class="timer-number">
+            <span class="minutes timer-time"></span>
+            <span class="timer-text">Minutes</span>
+          </div>
+          <div class="timer-number">
+            <span class="seconds timer-time"></span>
+            <span class="timer-text">Seconds</span>
+          </div>
+        </div>
+      </article>
+      <!-- block with timer start -->
+
+      <section class="features-block"></section>
+      <section class="pricing-block"></section>
+      <section class="testimonials-block"></section>
+      <section class="faq-block"></section>
+    </main>
+    <!-- ########## CONTENT END ########## -->
+
+    <script src="./bundle.js"></script>
+  </body>
+</html>
