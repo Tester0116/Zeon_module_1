@@ -1,5 +1,6 @@
 .timer-block {
   background: url('../../assets/timer-background.png') no-repeat;
+  background-size: cover;
   width: 100%;
   height: 436px;
   text-align: center;
@@ -9,12 +10,14 @@
   font: 700 50px 'Poppins';
   line-height: 75px;
   padding-top: 60px;
+  letter-spacing: 1.1px;
 }
 
 /* getting second timer title */
 .timer-block > h4 {
   font: 700 30px 'Poppins';
   line-height: 45px;
+  letter-spacing: 1.5px;
 }
 
 .timer {
@@ -26,16 +29,17 @@
 }
 
 .timer-number {
+  width: 130px;
   padding: 0.1em;
   display: inline-block;
   position: relative;
-  margin-right: 20px;
+  margin-right: 50px;
 }
 
 .timer-number:not(:last-child)::after {
   content: '|';
   position: absolute;
-  right: -40px;
+  right: -65px;
   top: 20px;
 }
 

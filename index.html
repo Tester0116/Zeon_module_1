@@ -10,12 +10,12 @@
   </head>
 
   <body>
-    <!-- ########## HEADER START ########## -->
+    <!-- $$$$$$$$$$ HEADER START $$$$$$$$$$ -->
     <header class="main-header">
       <nav class="main-header__nav">
         <img
           class="main-header__logo"
-          src="./assets/happy-logo.png"
+          src="./assets/happy-logo.svg"
           alt="logo"
         />
         <ul class="main-header__links-block">
@@ -31,47 +31,49 @@
           <li>
             <a href="#">FAQ</a>
           </li>
-          <button class="main-header__get-appbtn">GET THIS APP</button>
+          <button class="main-header__get-appbtn" type="button">
+            Get this app
+          </button>
         </ul>
       </nav>
     </header>
-    <!-- ########## HEADER END ########## -->
+    <!-- $$$$$$$$$$ HEADER END $$$$$$$$$$ -->
 
-    <!-- ########## CONTENT START ########## -->
-    <main>
-      <!-- block with timer start -->
-      <article class="timer-block">
-        <h1 class="timer-block__title">BIG SALE ON LIFETIME PLAN</h1>
-        <h4>there is very little left</h4>
+    <!-- $$$$$$$$$$ CONTENT START $$$$$$$$$$ -->
 
-        <div id="timer" class="timer">
-          <div class="timer-number">
-            <span class="days timer-time"></span>
-            <span class="timer-text">Days</span>
-          </div>
-          <div class="timer-number">
-            <span class="hours timer-time"></span>
-            <span class="timer-text">Hours</span>
-          </div>
-          <div class="timer-number">
-            <span class="minutes timer-time"></span>
-            <span class="timer-text">Minutes</span>
-          </div>
-          <div class="timer-number">
-            <span class="seconds timer-time"></span>
-            <span class="timer-text">Seconds</span>
-          </div>
+    <!-- block with timer start -->
+    <section class="timer-block" id="timer-block">
+      <h1 class="timer-block__title">BIG SALE ON LIFETIME PLAN</h1>
+      <h4>there is very little left</h4>
+
+      <div id="timer" class="timer">
+        <div class="timer-number">
+          <span class="days timer-time"></span>
+          <span class="timer-text">Days</span>
         </div>
-      </article>
-      <!-- block with timer start -->
-
+        <div class="timer-number">
+          <span class="hours timer-time"></span>
+          <span class="timer-text">Hours</span>
+        </div>
+        <div class="timer-number">
+          <span class="minutes timer-time"></span>
+          <span class="timer-text">Minutes</span>
+        </div>
+        <div class="timer-number">
+          <span class="seconds timer-time"></span>
+          <span class="timer-text">Seconds</span>
+        </div>
+      </div>
+    </section>
+    <!-- block with timer start -->
+    <main>
       <section class="features-block"></section>
       <section class="pricing-block"></section>
       <section class="testimonials-block"></section>
       <section class="faq-block"></section>
     </main>
-    <!-- ########## CONTENT END ########## -->
+    <!-- $$$$$$$$$$ CONTENT END $$$$$$$$$$ -->
 
-    <script src="./bundle.js"></script>
+    <script src="./js/main.js" type="module"></script>
   </body>
 </html>
