@@ -1,0 +1,15 @@
+.fdrow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.fdrowsb {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.ml40 {
+  margin-left: 40px;
+}

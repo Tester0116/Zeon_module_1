@@ -1,0 +1,44 @@
+.technology-block {
+  background: white;
+  padding: 100px 214px 0 214px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.technology-block__left-side {
+  margin-top: 76px;
+  max-width: 420px;
+}
+
+/* technology text */
+.technology-block__left-side > span {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #222222;
+}
+
+/* getting title */
+.technology-block__left-side > h3 {
+  margin-top: 11px;
+  font-size: 32px;
+  line-height: 36px;
+  color: #222222;
+}
+
+/* getting paragraph */
+.technology-block__left-side > p {
+  margin-top: 17px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #666666;
+}
+
+/* START RIGHT SIDE */
+.technology-block__right-side > img {
+  width: 100%;
+  height: 744px;
+  object-fit: cover;
+}

@@ -1,0 +1,48 @@
+.future-block {
+  background: white;
+  padding: 93px 214px 0 214px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.future-block__left-side {
+  max-width: 420px;
+}
+
+/* getting title */
+.future-block__left-side > h3 {
+  margin-top: 11px;
+  /* если делать weight 600 становится слишком жирным(не как в дизайне). PS: for mentors */
+  font: normal 54px 'Poppins';
+  line-height: 60px;
+  color: #222222;
+}
+
+/* getting paragraph */
+.future-block__left-side > p {
+  margin-top: 17px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #222222;
+}
+
+/* getting buttons block(div) */
+.future-block__left-side > .btns {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+.future-block__left-side > .btns :last-child {
+  margin-left: 10px;
+}
+.future-block__left-side > .btns > * {
+  margin-left: 0;
+}
+
+/* START RIGHT SIDE */
+.future-block__right-side > img {
+  width: 100%;
+  height: 744px;
+  object-fit: cover;
+}
