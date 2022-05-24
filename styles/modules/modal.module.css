@@ -1,0 +1,218 @@
+/* The Modal (background) */
+.modal-block {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+.modal-block__content {
+  overflow: auto;
+  position: relative;
+  width: 506px;
+  height: 500px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 56px 90px;
+  border-radius: 4px;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+/* getting close icon */
+.modal-block__content > .close-icon {
+  position: absolute;
+  top: 24px;
+  right: 26px;
+}
+
+/* getting title */
+.modal-block__content > h5 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 25px;
+}
+/* getting little title */
+.modal-block__content > h6 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 30px;
+}
+
+.modal-block__inputs {
+  width: 330px;
+  background-color: #f2f2f2;
+  height: 42px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  padding: 9px 17px;
+  margin-top: 17px;
+
+  font: 400 16px 'Poppins';
+  line-height: 24px;
+}
+/* getting placeholder */
+.modal-block__inputs::placeholder {
+  font-size: 16px;
+  line-height: 24px;
+  color: #7d7d7d;
+}
+
+/* all plans div */
+.modal-block__plan {
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 11px;
+  padding: 9px 0;
+  border-radius: 4px;
+  background-color: #fafafa;
+  border: 1px solid #0278ed;
+  color: #0278ed;
+}
+/* plans text */
+.modal-block__plan > span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+.modal-block__plan > input[type='radio']:checked {
+  background-color: green;
+}
+
+.plan__blue {
+  border: 1px solid #0278ed;
+  color: #0278ed;
+}
+.active-plan--0 {
+  background-color: #0278ed;
+  border: 1px solid #0278ed;
+  color: white;
+}
+
+.plan__red {
+  border: 1px solid #ff5437;
+  color: #ff5437;
+}
+.active-plan--1 {
+  background-color: #ff5437;
+  border: 1px solid #ff5437;
+  color: white;
+}
+
+.plan__yellow {
+  border: 1px solid #ff9209;
+  color: #ff9209;
+}
+.active-plan--2 {
+  background-color: #ff9209;
+  border: 1px solid #ff9209;
+  color: white;
+}
+
+/* check icon */
+#current-plan {
+  position: absolute;
+  left: 15px;
+}
+
+/* checkbox block */
+.modal-block__checkbox {
+  margin-top: 23px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox {
+  cursor: pointer;
+  margin-bottom: 0.2em;
+  width: 80px;
+  margin-left: -0.2em;
+}
+
+/* all inputs */
+.custom-checkbox > input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+/* for label label, in .custom-checkbox */
+.custom-checkbox > span {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+/* creating empty box for checkbox */
+.custom-checkbox > input[type='checkbox'] + span::before {
+  content: '';
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 2px solid #0278ed;
+  border-radius: 4px;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 80% 80%;
+}
+
+/* adding check-icon for checked  */
+.custom-checkbox > input[type='checkbox']:checked + span::before {
+  border: 2px solid #0b76ef;
+  background-color: white;
+  background-image: url('../../assets/svg/check-blue-icon.svg');
+}
+
+/* for input which type is radio */
+.custom-checkbox > input[type='radio']:checked + span::before {
+  content: '';
+  position: absolute;
+  left: 13px;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 80% 80%;
+  background-image: url('../../assets/svg/check-icon.svg');
+}
+
+.modal-block__btn {
+  margin-left: 0;
+  margin-top: 42px;
+}
+
+#loading-icon {
+  display: block;
+  margin: 40px auto 0 auto;
+  display: none;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {
+    top: 300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}

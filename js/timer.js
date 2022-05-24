@@ -1,21 +1,25 @@
-const ValidDate = (dateString) => {
-  let totalTime = []
-  const parts = dateString.split(' ').join('.').split('.')
+const isValid = (date) => {
+  const [d, m, y, h] = date.split(' ').join('.').split('.')
+  if (d > 31 || d < 0) return false // valid date
+  if (m > 12 || m < 0) return false // valid month
+  if (y.length > 4 || y.length < 4) return false // valid year
+}
 
-  // validating year
-  if (parts[2].length !== 4) return false
-  // validating month
-  if (parts[1] > 12) return false
-  // validating day
-  if (parts[0] > 31) return false
-  totalTime.push(parts[2], parts[1], parts[0], parts[3])
+const parseDate = (dateString) => {
+  const isValidDate = isValid(dateString)
+  if (isValidDate === false) return false
+
+  let totalTime = []
+  const [d, m, y, h] = dateString.split(' ').join('.').split('.')
+
+  totalTime.push(y, m, d, h)
 
   return totalTime
 }
 
 const getTimeRemaining = (endtime) => {
-  const vd = ValidDate(endtime)
-  const t = Date.parse(vd) - Date.parse(new Date())
+  const vd = parseDate(endtime)
+  const t = Date.parse(vd) - new Date()
   const seconds = Math.floor((t / 1000) % 60)
   const minutes = Math.floor((t / 1000 / 60) % 60)
   const hours = Math.floor((t / (1000 * 60 * 60)) % 24)
@@ -40,7 +44,7 @@ export const initializeTimer = (endtime) => {
     const t = getTimeRemaining(endtime)
     let timeinterval = setInterval(updateTimer, 1000)
 
-    if (t.total <= 0 || ValidDate(endtime) === false) {
+    if (t.total <= 0 || parseDate(endtime) === false) {
       document.getElementById('timer-block').className = 'hidden'
       clearInterval(timeinterval)
       return true

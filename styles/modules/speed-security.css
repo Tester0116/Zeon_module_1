@@ -14,31 +14,6 @@
   max-width: 420px;
 }
 
-/* speedSecurity text */
-.speedSecurity-block__right-side > span {
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #222222;
-}
-
-/* getting title */
-.speedSecurity-block__right-side > h3 {
-  margin-top: 11px;
-  font-size: 32px;
-  line-height: 36px;
-  color: #222222;
-}
-
-/* getting paragraph */
-.speedSecurity-block__right-side > p {
-  margin-top: 17px;
-  font-size: 16px;
-  line-height: 24px;
-  color: #666666;
-}
-
 /* START RIGHT SIDE */
 .speedSecurity-block__left-side > img {
   width: 100%;

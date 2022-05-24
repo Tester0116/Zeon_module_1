@@ -1,0 +1,90 @@
+.pricing-block {
+  background-color: white;
+  padding: 100px 136px;
+  text-align: center;
+}
+
+.pricing-block__text-side {
+  max-width: 568px;
+  margin: 0 auto;
+}
+
+/* START PRICE SIDE */
+.pricing-block__price-side {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+/* getting price item */
+.pricing-block__price-side > .price_item {
+  margin-top: 40px;
+  width: 380px;
+  min-height: 338px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f2f2;
+  border-radius: 20px;
+  padding: 50px 0;
+}
+
+/* getting price-name */
+.pricing-block__price-side > .price_item > span {
+  font-size: 18px;
+  line-height: 24px;
+  color: #0278ed;
+}
+.pricing-block__price-side > .price_item > span::first-letter {
+  text-transform: uppercase;
+}
+
+/* getting price-price */
+.pricing-block__price-side > .price_item > h1 {
+  font-size: 108px;
+  line-height: 124px;
+  letter-spacing: 8px;
+  color: #0278ed;
+}
+
+/* getting price-text */
+.pricing-block__price-side > .price_item > h6 {
+  margin-top: 25px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #222222;
+}
+
+/* getting price-text */
+.pricing-block__price-side > .price_item > button {
+  width: 130px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #0278ed;
+  align-self: center;
+  margin-top: 20px;
+
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.price_red {
+  color: #ff5437 !important;
+}
+
+.price_yellow {
+  color: #ff9209 !important;
+}
+
+.price_red-btn {
+  background-color: #ff5437 !important;
+}
+
+.price_yellow-btn {
+  background-color: #ff9209 !important;
+}

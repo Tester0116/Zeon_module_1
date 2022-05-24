@@ -30,10 +30,6 @@
 /* text dark mode */
 .dark-mode__block > h6 {
   color: var(--text-color);
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
 }
 /* dark mode title */
 .dark-mode__block > h1 {
