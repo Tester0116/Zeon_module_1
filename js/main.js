@@ -82,15 +82,18 @@ dark.addEventListener('click', () => {
 const price_name = document.querySelectorAll('.price_name')
 const price_price = document.querySelectorAll('.price_price')
 const price_text = document.querySelectorAll('.price_text')
+const price_value = document.querySelectorAll('.price_value')
 
-for (let i = 0; i < price_name.length; i++)
-  price_name[i].textContent = DATA.plans[i].name // setting name from json
+// setting name from json
+price_name.forEach((item, index) => (item.textContent = DATA.plans[index].name))
 
-for (let i = 0; i < price_price.length; i++)
-  price_price[i].textContent = '$' + DATA.plans[i].price // setting price from json
+price_price.forEach((item, index) => {
+  item.textContent = '$' + DATA.plans[index].price // setting price from json
+  price_value.value = DATA.plans[index].name // setting value for modal active plan
+})
 
-for (let i = 0; i < price_text.length; i++)
-  price_text[i].textContent = DATA.plans[i].text // setting text from json
+// setting text from json
+price_text.forEach((item, index) => (item.textContent = DATA.plans[index].text))
 // $$$$$ PRIICING END $$$$$
 
 // $$$$$ TESTMONIALS START $$$$$
@@ -98,14 +101,20 @@ const testimonialsName = document.querySelectorAll('.testimonials-name')
 const testimonialsText = document.querySelectorAll('.testimonials-text')
 const testimonialsJob = document.querySelectorAll('.testimonials-job')
 
-for (let i = 0; i < testimonialsName.length; i++)
-  testimonialsName[i].textContent = DATA.testimonials[i].name // setting name from json
+// setting name from json
+testimonialsName.forEach(
+  (item, index) => (item.textContent = DATA.testimonials[index].name)
+)
 
-for (let i = 0; i < testimonialsText.length; i++)
-  testimonialsText[i].textContent = DATA.testimonials[i].text // setting text from json
+// setting text from json
+testimonialsText.forEach(
+  (item, index) => (item.textContent = DATA.testimonials[index].text)
+)
 
-for (let i = 0; i < testimonialsJob.length; i++)
-  testimonialsJob[i].textContent = DATA.testimonials[i].job // setting job from json
+// setting job from json
+testimonialsJob.forEach(
+  (item, index) => (item.textContent = DATA.testimonials[index].job)
+)
 // $$$$$ PRIICING END $$$$$
 
 // $$$$$ MODAL START $$$$$
@@ -115,29 +124,91 @@ const modal = document.getElementById('modal') // Get the modal
 const btn = document.querySelectorAll('.buy-now') // open modal button
 
 // When the user clicks on the button =>
-const openModal = () => (modal.style.display = 'flex')
+const radioInputs = document.getElementsByName('radio-inputs')
+
+const setActiveRadio = (element) => {
+  radioInputs.forEach((a) => {
+    if (a.dataset.radio == element.dataset.btnRadio) a.checked = true
+  })
+}
+const openModal = (element) => {
+  setActiveRadio(element)
+  modal.style.display = 'flex'
+}
 const closeModal = () => (modal.style.display = 'none')
 
 document.querySelector('.close-icon').addEventListener('click', closeModal)
-for (let i = 0; i < btn.length; i++) btn[i].addEventListener('click', openModal)
+
+btn.forEach((item) => item.addEventListener('click', () => openModal(item)))
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = 'none'
-  }
+window.onclick = (event) => {
+  if (event.target == modal) modal.style.display = 'none'
 }
 
 // start plans
-const plans = document.querySelectorAll('.modal-block__plan')
 
-const addCurrentValue = (plan, index) => {
-  console.log(plan.children)
+const addCurrentValue = (radioInput) => {
+  console.log(radioInput.textContent)
 }
 
-for (let i = 0; i < plans.length; i++) {
-  const element = plans[i]
-  plans[i].addEventListener('click', () => addCurrentValue(element, i))
+// adding action for send button
+const sendBtn = document.querySelector('.modal-block__send-btn')
+const form = document.getElementById('form')
+const userName = document.querySelector('.user-name')
+const email = document.querySelector('.email')
+
+const sendToBack = (e) => {
+  e.preventDefault()
+  validateInputs()
+  // textInputs.forEach((inp  ut) => {
+  //   if (input.value.length <= 0) {
+  //     let error = document.createElement('span')
+  //     document.body.textInputs.appendChild(error)
+  //     console.log('empty')
+  //   } else {
+  //     console.log('not empty')
+  //   }
+  // })
 }
+
+const validateInputs = () => {
+  const userNameValue = userName.value.trim()
+  const emailValue = email.value.trim()
+  if (userNameValue === '') setError(userName, 'userName is required')
+  else setSuccess(userName)
+
+  if (emailValue === '') setError(email, 'email is required')
+  else if (!isValidEmail(emailValue)) {
+    setError(email, 'Provide a valid email address')
+  } else {
+    setSuccess(email)
+  }
+}
+
+const setSuccess = (element) => {
+  const inputControl = element.parentElement
+  const errorDisplay = inputControl.querySelector('.error')
+
+  errorDisplay.textContent = ''
+  inputControl.classList.remove('error')
+}
+
+const setError = (element, message) => {
+  const inputControl = element.parentElement
+  const errorDisplay = inputControl.querySelector('.error')
+
+  errorDisplay.textContent = message
+  inputControl.classList.add('error')
+}
+
+const isValidEmail = (email) => {
+  const re =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  return re.test(String(email).toLowerCase())
+}
+
+form.addEventListener('submit', sendToBack)
+sendBtn.addEventListener('click', sendToBack)
 
 // $$$$$ MODAL END $$$$$

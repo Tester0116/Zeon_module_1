@@ -11,7 +11,7 @@
     <!-- $$$$$$$$$$ MODAL START $$$$$$$$$$ -->
     <section class="modal-block" id="modal">
       <!-- Modal content -->
-      <div class="modal-block__content">
+      <form class="modal-block__content" id="form">
         <img
           class="close-icon"
           src="./assets/svg/close-icon.svg"
@@ -19,29 +19,57 @@
         />
         <h5>Leave a request for the purchase of goods</h5>
 
-        <input class="modal-block__inputs" placeholder="name" type="text" />
-        <input class="modal-block__inputs" placeholder="email" type="text" />
+        <div>
+          <input
+            class="modal-block__inputs user-name"
+            placeholder="name"
+            type="text"
+            required
+          />
+          <span class="error"></span>
+        </div>
+        <div>
+          <input
+            class="modal-block__inputs email"
+            placeholder="email"
+            type="email"
+            required
+          />
+          <span class="error"></span>
+        </div>
         <h5 class="mt23">Your plan?</h5>
 
         <!-- start plans -->
-        <div class="modal-block__plan">
-          <label class="custom-checkbox">
-            <input type="radio" />
-            <span>Standart</span>
+        <div class="modal-block__plan-block">
+          <input
+            type="radio"
+            id="standard"
+            name="radio-inputs"
+            data-radio="standart"
+          />
+          <label class="modal-block__plan plan__blue" for="standard">
+            Standart
           </label>
-        </div>
-
-        <div class="modal-block__plan plan__red">
-          <label class="custom-checkbox">
-            <input type="radio" />
-            <span>Premium</span>
+          <!-- ##### -->
+          <input
+            type="radio"
+            id="premium"
+            name="radio-inputs"
+            data-radio="premium"
+          />
+          <label class="modal-block__plan plan__red" for="premium">
+            Premium
           </label>
-        </div>
-
-        <div class="modal-block__plan plan__yellow active-plan--2">
-          <label class="custom-checkbox">
-            <input type="radio" checked />
-            <span>Lifetime</span>
+          <!-- ##### -->
+          <input
+            type="radio"
+            id="lifetime"
+            checked
+            name="radio-inputs"
+            data-radio="lifetime"
+          />
+          <label class="modal-block__plan plan__yellow" for="lifetime">
+            Lifetime
           </label>
         </div>
         <!-- end plans -->
@@ -81,13 +109,13 @@
         </div>
         <!-- end links -->
 
-        <button class="btn modal-block__btn">send</button>
+        <button class="btn modal-block__send-btn" type="submit">send</button>
         <img
           id="loading-icon"
           src="./assets/svg/loading-icon.svg"
           alt="loading icoon"
         />
-      </div>
+      </form>
       <!-- Modal content end -->
     </section>
 
@@ -415,17 +443,27 @@
         <div class="pricing-block__price-side">
           <!-- ##### 1 ##### -->
           <div class="price_item">
-            <span class="price_name"> Standard </span>
+            <span class="price_name">Standard</span>
             <h1 class="price_price">$</h1>
             <h6 class="price_text">Annually</h6>
-            <button class="buy-now" type="button">Buy now</button>
+            <button
+              class="buy-now price_value"
+              type="button"
+              data-btn-radio="standart"
+            >
+              Buy now
+            </button>
           </div>
           <!-- ##### 2 ##### -->
           <div class="price_item">
             <span class="price_name price_red"> Standard </span>
             <h1 class="price_price price_red">$</h1>
             <h6 class="price_text">Annually</h6>
-            <button class="buyNow price_red-btn buy-now" type="button">
+            <button
+              class="buyNow price_red-btn buy-now price_value"
+              type="button"
+              data-btn-radio="premium"
+            >
               Buy now
             </button>
           </div>
@@ -434,7 +472,11 @@
             <span class="price_name price_yellow"> Standard </span>
             <h1 class="price_price price_yellow">$</h1>
             <h6 class="price_text">Annually</h6>
-            <button class="price_yellow-btn buy-now" type="button">
+            <button
+              class="price_yellow-btn buy-now price_value"
+              type="button"
+              data-btn-radio="lifetime"
+            >
               Buy now
             </button>
           </div>

@@ -1,11 +1,11 @@
 {
   "plans": [
-    { "name": "standart", "price": 9, "text": "Monthly", "color": "#0278ED" },
-    { "name": "premium", "price": 99, "text": "Annually", "color": "#FF5437" },
-    { "name": "lifetime", "price": 149, "text": "up front", "color": "#FF9209" }
+    { "name": "standart", "price": 9, "text": "Monthly" },
+    { "name": "premium", "price": 99, "text": "Annually" },
+    { "name": "lifetime", "price": 149, "text": "up front" }
   ],
 
-  "timerEndDate": "26.05.2022 17:27",
+  "timerEndDate": "26.06.2022 17:27",
   "testimonials": [
     {
       "name": "Pam Beesly",

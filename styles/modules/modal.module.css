@@ -62,62 +62,114 @@
   font: 400 16px 'Poppins';
   line-height: 24px;
 }
+.modal-block__inputs:focus {
+  border: 2px solid #5ab0ff;
+}
 /* getting placeholder */
 .modal-block__inputs::placeholder {
   font-size: 16px;
   line-height: 24px;
   color: #7d7d7d;
 }
+/* error input */
+.modal-block__inputs .modal-block__inputs {
+  background-color: #ffeeee;
+}
+/* error text */
+.modal-block__inputs + .error {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #ff5437;
+  float: left;
+  margin-left: 15px;
+}
 
 /* all plans div */
+.modal-block__plan-block {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+/* plans text (label) */
 .modal-block__plan {
   position: relative;
   cursor: pointer;
-  margin-bottom: 11px;
   padding: 9px 0;
   border-radius: 4px;
   background-color: #fafafa;
   border: 1px solid #0278ed;
   color: #0278ed;
-}
-/* plans text */
-.modal-block__plan > span {
+
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
 }
-.modal-block__plan > input[type='radio']:checked {
-  background-color: green;
+
+/* start radio styles */
+.modal-block__plan-block > input[type='radio'] {
+  display: none;
 }
+/* start radio styles */
+
+/* for blue checked radio */
+.modal-block__plan-block
+  > input[type='radio']:checked
+  + label[class*='plan__blue'] {
+  background-color: #0278ed;
+  border: 1px solid #0278ed;
+  color: white;
+}
+/* for red checked radio */
+.modal-block__plan-block
+  > input[type='radio']:checked
+  + label[class*='plan__red'] {
+  background-color: #ff5437;
+  border: 1px solid #ff5437;
+  color: white;
+}
+/* for yellow checked radio */
+.modal-block__plan-block
+  > input[type='radio']:checked
+  + label[class*='plan__yellow'] {
+  background-color: #ff9209;
+  border: 1px solid #ff9209;
+  color: white;
+}
+/* for input which type is radio */
+.modal-block__plan-block > input[type='radio'] + label::before {
+  content: '';
+  position: absolute;
+  left: 13px;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 80% 80%;
+  background-image: none;
+}
+
+/* for checked radio */
+.modal-block__plan-block > input[type='radio']:checked + label::before {
+  background-image: url('../../assets/svg/check-icon.svg');
+}
+
+/* end radio styles */
 
 .plan__blue {
   border: 1px solid #0278ed;
   color: #0278ed;
-}
-.active-plan--0 {
-  background-color: #0278ed;
-  border: 1px solid #0278ed;
-  color: white;
 }
 
 .plan__red {
   border: 1px solid #ff5437;
   color: #ff5437;
 }
-.active-plan--1 {
-  background-color: #ff5437;
-  border: 1px solid #ff5437;
-  color: white;
-}
 
 .plan__yellow {
   border: 1px solid #ff9209;
   color: #ff9209;
-}
-.active-plan--2 {
-  background-color: #ff9209;
-  border: 1px solid #ff9209;
-  color: white;
 }
 
 /* check icon */
@@ -180,21 +232,7 @@
   background-image: url('../../assets/svg/check-blue-icon.svg');
 }
 
-/* for input which type is radio */
-.custom-checkbox > input[type='radio']:checked + span::before {
-  content: '';
-  position: absolute;
-  left: 13px;
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 80% 80%;
-  background-image: url('../../assets/svg/check-icon.svg');
-}
-
-.modal-block__btn {
+.modal-block__send-btn {
   margin-left: 0;
   margin-top: 42px;
 }

@@ -23,9 +23,7 @@ export const animateScroll = ({
   const amountOfPixelsToScroll = initialPosition - targetPosition
 
   function step(timestamp) {
-    if (start === undefined) {
-      start = timestamp
-    }
+    if (start === undefined) start = timestamp
 
     const elapsed = timestamp - start
 
