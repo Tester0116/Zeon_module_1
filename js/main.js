@@ -141,6 +141,7 @@ const openModal = (element) => {
   setActiveRadio(element)
 
   modal.style.display = 'flex'
+  document.body.style.overflow = 'hidden'
 }
 const closeModal = () => (modal.style.display = 'none')
 
@@ -156,32 +157,42 @@ window.onclick = (event) => {
 // adding action for send button
 const sendBtn = document.querySelector('.modal-block__send-btn')
 const form = document.getElementById('form')
+const inputs = document.querySelectorAll('.modal-block__inputs')
 const userName = document.querySelector('.user-name')
 const email = document.querySelector('.email')
 const loading = document.querySelector('.loading-block')
 const checkboxes = document.querySelectorAll('.input-checkboxes')
+const checkboxesName = document.querySelectorAll('.input-checkboxes__name')
+const checkboxesError = document.querySelector('.checkbox')
 
 radio.forEach((item) =>
   item.addEventListener('click', () => (activeRadioLabels = item.textContent))
 )
 
-const activeCheckboxes = Array.from(checkboxes).filter(
-  (checkbox) => checkbox.checked === true
-)
-
-const activeCheckboxesText = activeCheckboxes.map(
-  (checkbox) => checkbox.nextElementSibling.textContent
-)
+const activeCheckboxesText = () => {
+  let texts = []
+  checkboxes.forEach((checkbox, index) => {
+    if (checkbox.checked === true) {
+      texts.push(checkboxesName[index].textContent)
+    }
+  })
+  return texts
+}
 
 const sendToBack = (e) => {
   e.preventDefault()
-  validateInputs()
+  const formData = validateInputs()
+  if (formData) {
+    console.log(formData)
+    loading.classList.remove('dn')
+    setTimeout(() => loading.classList.add('dn'), 2000)
+  }
 }
 
 const validateInputs = () => {
   const userNameValue = userName.value.trim()
   const emailValue = email.value.trim()
-
+  const checkboxText = activeCheckboxesText()
   // check up for name
   if (userNameValue === '') setError(userName, 'required field')
   else if (userNameValue.length < 3)
@@ -194,32 +205,37 @@ const validateInputs = () => {
     return setError(email, 'Provide a valid email')
   else setSuccess(email)
 
-  const formData = {
+  // check up for checkboxes
+  if (checkboxText.length === 0)
+    return setError(checkboxesError, 'required field')
+  else setSuccess(checkboxesError)
+
+  return {
     name: userNameValue,
     email: emailValue,
     plan: activeRadioLabels.trim(),
-    social: activeCheckboxesText,
+    social: checkboxText,
   }
-
-  console.log(formData)
-  loading.classList.remove('dn')
-  setTimeout(() => loading.classList.add('dn'), 2000)
 }
 
 const setSuccess = (element) => {
-  const inputControl = element.parentElement
-  const errorDisplay = inputControl.querySelector('.error')
+  const inputParent = element.parentElement
+  const errorDisplay = inputParent.querySelector('.error')
+  const errorInput = inputParent.querySelector('.modal-block__inputs')
 
   errorDisplay.textContent = ''
-  inputControl.classList.remove('error')
+  inputParent.classList.remove('error')
+  if (errorInput !== null) errorInput.style.background = '#f2f2f2'
 }
 
 const setError = (element, message) => {
-  const inputControl = element.parentElement
-  const errorDisplay = inputControl.querySelector('.error')
+  const inputParent = element.parentElement
+  const errorDisplay = inputParent.querySelector('.error')
+  const errorInput = inputParent.querySelector('.modal-block__inputs')
 
   errorDisplay.textContent = message
-  inputControl.classList.add('error')
+  inputParent.classList.add('error')
+  if (errorInput !== null) errorInput.style.background = '#ffeeee'
 }
 
 const isValidEmail = (email) => {
@@ -230,5 +246,10 @@ const isValidEmail = (email) => {
 
 form.addEventListener('submit', sendToBack)
 sendBtn.addEventListener('click', sendToBack)
+userName.addEventListener('input', validateInputs)
+email.addEventListener('input', validateInputs)
+checkboxes.forEach((checkbox) =>
+  checkbox.addEventListener('input', validateInputs)
+)
 
 // $$$$$ MODAL END $$$$$

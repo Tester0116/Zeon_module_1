@@ -8,16 +8,18 @@
   left: 0;
   top: 0;
   width: 100%;
+  overflow-y: scroll;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* Modal Content */
 .modal-block__content {
-  overflow: auto;
+  margin-top: 20em;
+  margin-bottom: 2rem;
   position: relative;
   width: 506px;
-  height: 500px;
+  height: auto;
   background-color: white;
   color: black;
   text-align: center;
@@ -71,18 +73,20 @@
   line-height: 24px;
   color: #7d7d7d;
 }
-/* error input */
-.modal-block__inputs .modal-block__inputs {
-  background-color: #ffeeee;
-}
+
 /* error text */
-.modal-block__inputs + .error {
+.modal-block__inputs + .error,
+.modal-block__checkbox > .error {
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
   color: #ff5437;
   float: left;
   margin-left: 15px;
+}
+.modal-block__checkbox > .error {
+  margin-top: -20px;
+  margin-bottom: 20px;
 }
 
 /* all plans div */
