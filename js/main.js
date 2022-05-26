@@ -125,14 +125,21 @@ const btn = document.querySelectorAll('.buy-now') // open modal button
 
 // When the user clicks on the button =>
 const radioInputs = document.getElementsByName('radio-inputs')
+const radio = document.querySelectorAll('.modal-block__plan')
 
+let activeRadioLabels = ''
 const setActiveRadio = (element) => {
   radioInputs.forEach((a) => {
-    if (a.dataset.radio == element.dataset.btnRadio) a.checked = true
+    activeRadioLabels = a.nextElementSibling.textContent
+    if (a.dataset.radio == element.dataset.btnRadio) {
+      a.checked = true
+    }
   })
 }
+
 const openModal = (element) => {
   setActiveRadio(element)
+
   modal.style.display = 'flex'
 }
 const closeModal = () => (modal.style.display = 'none')
@@ -146,44 +153,57 @@ window.onclick = (event) => {
   if (event.target == modal) modal.style.display = 'none'
 }
 
-// start plans
-
-const addCurrentValue = (radioInput) => {
-  console.log(radioInput.textContent)
-}
-
 // adding action for send button
 const sendBtn = document.querySelector('.modal-block__send-btn')
 const form = document.getElementById('form')
 const userName = document.querySelector('.user-name')
 const email = document.querySelector('.email')
+const loading = document.querySelector('.loading-block')
+const checkboxes = document.querySelectorAll('.input-checkboxes')
+
+radio.forEach((item) =>
+  item.addEventListener('click', () => (activeRadioLabels = item.textContent))
+)
+
+const activeCheckboxes = Array.from(checkboxes).filter(
+  (checkbox) => checkbox.checked === true
+)
+
+const activeCheckboxesText = activeCheckboxes.map(
+  (checkbox) => checkbox.nextElementSibling.textContent
+)
 
 const sendToBack = (e) => {
   e.preventDefault()
   validateInputs()
-  // textInputs.forEach((inp  ut) => {
-  //   if (input.value.length <= 0) {
-  //     let error = document.createElement('span')
-  //     document.body.textInputs.appendChild(error)
-  //     console.log('empty')
-  //   } else {
-  //     console.log('not empty')
-  //   }
-  // })
 }
 
 const validateInputs = () => {
   const userNameValue = userName.value.trim()
   const emailValue = email.value.trim()
-  if (userNameValue === '') setError(userName, 'userName is required')
+
+  // check up for name
+  if (userNameValue === '') setError(userName, 'required field')
+  else if (userNameValue.length < 3)
+    setError(userName, 'should be more then 3 symbols')
   else setSuccess(userName)
 
-  if (emailValue === '') setError(email, 'email is required')
-  else if (!isValidEmail(emailValue)) {
-    setError(email, 'Provide a valid email address')
-  } else {
-    setSuccess(email)
+  // check up for email
+  if (emailValue === '') return setError(email, 'required field')
+  else if (!isValidEmail(emailValue))
+    return setError(email, 'Provide a valid email')
+  else setSuccess(email)
+
+  const formData = {
+    name: userNameValue,
+    email: emailValue,
+    plan: activeRadioLabels.trim(),
+    social: activeCheckboxesText,
   }
+
+  console.log(formData)
+  loading.classList.remove('dn')
+  setTimeout(() => loading.classList.add('dn'), 2000)
 }
 
 const setSuccess = (element) => {
