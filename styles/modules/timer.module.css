@@ -11,6 +11,7 @@
   line-height: 75px;
   padding-top: 60px;
   letter-spacing: 1.1px;
+  text-transform: uppercase;
 }
 
 /* getting second timer title */
@@ -61,4 +62,39 @@
 
 .hidden {
   display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .timer-block__title {
+    font: 700 40px 'Poppins';
+    line-height: 40px;
+    padding-top: 90px;
+    letter-spacing: 1.1px;
+  }
+  .timer-block > h4 {
+    font: 700 18px 'Poppins';
+    line-height: 27px;
+    letter-spacing: 1.5px;
+  }
+  .timer {
+    font-size: 40px;
+    line-height: 60px;
+  }
+  .timer-time {
+    padding: 0;
+  }
+  .timer-number {
+    width: 50px;
+    margin-right: 20px;
+  }
+  .timer-text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .timer-number:not(:last-child)::after {
+    content: '|';
+    position: absolute;
+    right: -25px;
+    top: 5px;
+  }
 }

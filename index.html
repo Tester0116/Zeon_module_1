@@ -128,35 +128,93 @@
     <!-- $$$$$$$$$$ HEADER START $$$$$$$$$$ -->
     <header class="main-header" id="main-header">
       <img
-        class="main-header__logo"
+        class="main-header__logo to-header"
         src="./assets/svg/happy-logo.svg"
         alt="logo"
       />
+
       <nav class="main-header__nav">
-        <div class="fdrow">
-          <ul class="main-header__links-block">
-            <li>
-              <a id="features-btn" href="#">Features</a>
-            </li>
-            <li>
-              <a id="pricing-btn" href="#">Pricing</a>
-            </li>
-            <li>
-              <a id="testimonials-btn" href="#">Testimonials</a>
-            </li>
-            <li>
-              <a id="faq-btn" href="#">FAQ</a>
-            </li>
-          </ul>
-          <a
-            class="btn main-header__get-appbtn get-app_link"
-            href="#"
-            target="_blank"
-          >
-            Get this app
-          </a>
-        </div>
+        <ul class="main-header__links-block">
+          <li>
+            <a class="features-btn" href="#">Features</a>
+          </li>
+          <li>
+            <a class="pricing-btn" href="#">Pricing</a>
+          </li>
+          <li>
+            <a class="testimonials-btn" href="#">Testimonials</a>
+          </li>
+          <li>
+            <a class="faq-btn" href="#">FAQ</a>
+          </li>
+        </ul>
+        <a
+          class="btn main-header__get-appbtn get-app_link"
+          href="#"
+          target="_blank"
+        >
+          Get this app
+        </a>
       </nav>
+      <!-- burger nav -->
+      <div class="burger-btn" onclick="this.classList.toggle('active')">
+        <svg
+          class="burger"
+          version="1.1"
+          height="100"
+          width="100"
+          viewBox="0 0 100 100"
+        >
+          <path class="line line1" d="M 30,65 H 70" />
+          <path
+            class="line line2"
+            d="M 70,50 H 30 C 30,50 18.644068,50.320751 18.644068,36.016949 C 18.644068,21.712696 24.988973,6.5812347 38.79661,11.016949 C 52.604247,15.452663 46.423729,62.711864 46.423729,62.711864 L 50.423729,49.152542 L 50.423729,16.101695"
+          />
+          <path
+            class="line line3"
+            d="M 30,35 H 70 C 70,35 80.084746,36.737688 80.084746,25.423729 C 80.084746,19.599612 75.882239,9.3123528 64.711864,13.559322 C 53.541489,17.806291 54.423729,62.711864 54.423729,62.711864 L 50.423729,49.152542 V 16.101695"
+          />
+        </svg>
+        <svg
+          class="x"
+          version="1.1"
+          height="100"
+          width="100"
+          viewBox="0 0 100 100"
+        >
+          <path class="line" d="M 34,32 L 66,68" />
+          <path class="line" d="M 66,32 L 34,68" />
+        </svg>
+      </div>
+      <nav class="main-header__nav-burger">
+        <img
+          class="main-header__logo"
+          src="./assets/svg/happy-logo.svg"
+          alt="logo"
+        />
+        <ul class="main-header__links-block--burger">
+          <li>
+            <a class="features-btn" href="#">Features</a>
+          </li>
+          <li>
+            <a class="pricing-btn" href="#">Pricing</a>
+          </li>
+          <li>
+            <a class="testimonials-btn" href="#">Testimonials</a>
+          </li>
+          <li>
+            <a class="faq-btn" href="#">FAQ</a>
+          </li>
+        </ul>
+        <a
+          class="btn main-header__get-appbtn get-app_link"
+          href="#"
+          target="_blank"
+        >
+          Get this app
+        </a>
+      </nav>
+      <!-- burger nav -->
     </header>
     <!-- $$$$$$$$$$ HEADER END $$$$$$$$$$ -->
 
@@ -209,7 +267,7 @@
       <!-- future end -->
 
       <!-- features start -->
-      <section class="features-block" id="features">
+      <section class="features-block dn" id="features">
         <span>Features</span>
         <h4>The latest & greatest in phone photography.</h4>
 
@@ -327,7 +385,7 @@
       <!-- features end -->
 
       <!-- statics start -->
-      <section class="static-block">
+      <section class="static-block dn">
         <div class="statics">
           <h1>400+</h1>
           <span>Pictures analyzed</span>
@@ -344,7 +402,7 @@
       <!-- statics end -->
 
       <!-- technology start -->
-      <section class="technology-block">
+      <section class="technology-block dn">
         <div class="technology-block__left-side">
           <span class="block-title">TEchnology</span>
           <h3 class="block-h3">
@@ -365,7 +423,7 @@
       <!-- technology end -->
 
       <!-- speed & security start -->
-      <section class="speedSecurity-block">
+      <section class="speedSecurity-block dn">
         <div class="speedSecurity-block__left-side">
           <img
             src="./assets/images/speed-&-security-phone.png"
@@ -387,7 +445,7 @@
       <!-- speed & security end -->
 
       <!-- dark mode start -->
-      <section class="dark-mode">
+      <section class="dark-mode dn">
         <div class="dark-mode__block">
           <h6 class="block-title" id="dark-mode_text">Dark mode</h6>
           <h1>Also available in <span>dark.</span></h1>
@@ -435,7 +493,7 @@
       <!-- dark mode end -->
 
       <!-- pricing start -->
-      <section class="pricing-block" id="pricing">
+      <section class="pricing-block dn" id="pricing">
         <div class="pricing-block__text-side">
           <h6 class="block-title">Pricing</h6>
           <h3 class="block-h3">A plan for every need.</h3>
@@ -490,7 +548,7 @@
       <!-- pricing end -->
 
       <!-- testimonials start -->
-      <section class="testimonials-block" id="testimonials">
+      <section class="testimonials-block dn" id="testimonials">
         <div>
           <h6 class="block-title">Testimonials</h6>
           <h3 class="block-h3">Don't take our word for it.</h3>
@@ -538,7 +596,7 @@
       <!-- testimonials end -->
 
       <!-- download start -->
-      <section class="download-block">
+      <section class="download-block dn">
         <div class="text-block">
           <h6 class="block-title">Download</h6>
           <h3 class="block-h3">It's available right now!</h3>
@@ -554,7 +612,7 @@
       <!-- download start -->
 
       <!-- faq start -->
-      <section class="faq-block" id="faq">
+      <section class="faq-block dn" id="faq">
         <div class="faq-block__header">
           <h1>FAQ</h1>
           <p>Some questions & some answers</p>

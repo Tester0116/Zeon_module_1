@@ -46,3 +46,9 @@
   height: 744px;
   object-fit: cover;
 }
+
+@media only screen and (max-width: 768px) {
+  .future-block {
+    padding: 0;
+  }
+}

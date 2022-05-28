@@ -7,36 +7,37 @@ initializeTimer(DATA.timerEndDate) // starting timer
 
 // adding listener for get app button
 const appLinks = document.querySelectorAll('.get-app_link')
-for (let i = 0; i < appLinks.length; i++) appLinks[i].href = DATA.appStoreLink
+
+appLinks.forEach((app) => (app.href = DATA.appStoreLink))
 
 // $$$$$ SCROLLS START $$$$$
 
 // ###
-const features = document.getElementById('features-btn')
+const features = document.querySelector('.features-btn')
 // ---
 features.addEventListener('click', () => scrollToElement({ id: 'features' }))
 // ###
 
 // ###
-const pricing = document.getElementById('pricing-btn')
+const pricing = document.querySelector('.pricing-btn')
 // ---
 pricing.addEventListener('click', () => scrollToElement({ id: 'pricing' }))
 // ###
 
 // ###
-const testimonials = document.getElementById('testimonials-btn')
+const testimonials = document.querySelector('.testimonials-btn')
 // ---
 testimonials.addEventListener('click', () =>
   scrollToElement({ id: 'testimonials' })
 )
 // ###
-const faq = document.getElementById('faq-btn')
+const faq = document.querySelector('.faq-btn')
 // ---
 faq.addEventListener('click', () => scrollToElement({ id: 'faq' }))
 // ###
 
 // ###
-const logo = document.getElementById('to-header')
+const logo = document.querySelector('.to-header')
 // ---
 logo.addEventListener('click', () =>
   window.scrollTo({

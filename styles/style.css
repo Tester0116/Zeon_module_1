@@ -2,6 +2,7 @@
 
 @import './default_styles.css';
 @import './constants.css';
+@import './modules/burger.module.css';
 @import './modules/header.module.css';
 @import './modules/timer.module.css';
 @import './modules/future.module.css';
