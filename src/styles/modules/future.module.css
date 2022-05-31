@@ -1,0 +1,47 @@
+.future-block__left-side {
+  max-width: 420px;
+  margin-top: 45px;
+}
+
+/* getting title */
+.future-block__left-side > h3 {
+  margin-top: 11px;
+  font: normal 3.375rem 'Poppins';
+  line-height: 60px;
+  color: #222222;
+}
+
+/* getting paragraph */
+.future-block__left-side > p {
+  margin-top: 17px;
+  font-size: 1rem;
+  line-height: 24px;
+  color: #222222;
+}
+
+/* getting buttons block(div) */
+.future-block__left-side > .btns {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.future-block__left-side > .btns :last-child {
+  margin-left: 10px;
+}
+.future-block__left-side > .btns > * {
+  margin-left: 0;
+}
+
+/* START RIGHT SIDE */
+.future-block__right-side > img {
+  width: 376px;
+  height: 744px;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 768px) {
+  .future-block__right-side > img {
+    margin-top: 50px;
+  }
+}

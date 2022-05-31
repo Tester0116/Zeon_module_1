@@ -1,0 +1,53 @@
+.faq-block {
+  padding: 100px 136px;
+  background-color: #e5e5e5;
+  color: #222222;
+}
+
+/* getting FAQ text */
+.faq-block__text-block > h1 {
+  font-size: 32px;
+  line-height: 36px;
+}
+
+/* getting FAQ paraghraph */
+.faq-block__text-block > p {
+  margin-top: 13px;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.faq-block__items {
+  margin-top: 42px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 50px;
+}
+
+/* getting each item */
+.faq-block__item {
+  width: 45%;
+}
+
+/* getting questions */
+.faq-block__item > h6 {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+/* getting answers */
+.faq-block__item > p {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 24px;
+}
+@media only screen and (max-width: 768px) {
+  .faq-block {
+    padding: 100px 20px;
+  }
+  .faq-block__item {
+    width: 100%;
+  }
+}

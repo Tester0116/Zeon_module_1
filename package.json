@@ -1,0 +1,32 @@
+{
+  "name": "module_1",
+  "version": "1.0.0",
+  "description": "zeon 1-module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tester0116/Zeon_module_1.git"
+  },
+  "keywords": [
+    "js",
+    "vanilla",
+    "webpack"
+  ],
+  "author": "Nursultan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tester0116/Zeon_module_1/issues"
+  },
+  "homepage": "https://github.com/Tester0116/Zeon_module_1#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2"
+  }
+}

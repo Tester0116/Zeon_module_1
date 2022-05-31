@@ -1,0 +1,26 @@
+.main-footer {
+  padding: 125px 0;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+}
+
+/* block all icons */
+.main-footer > .icons {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.main-footer img {
+  cursor: pointer;
+}
+
+.main-footer__links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}

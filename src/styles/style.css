@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@import './default_styles.css';
+@import './constants.css';
+@import './modules/burger.module.css';
+@import './modules/header.module.css';
+@import './modules/timer.module.css';
+@import './modules/future.module.css';
+@import './modules/features.module.css';
+@import './modules/statics.module.css';
+@import './modules/technology.module.css';
+@import './modules/speed-security.css';
+@import './modules/dark-mode.module.css';
+@import './modules/pricing.module.css';
+@import './modules/testimonials.module.css';
+@import './modules/download.module.css';
+@import './modules/faq.module.css';
+@import './modules/footer.module.css';
+@import './modules/modal.module.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fff;
+  font: 400 0.9375rem 'Poppins';
+  width: 100%;
+  min-height: 100vh;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: #666666;
+  cursor: pointer;
+}
+li {
+  list-style-type: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}

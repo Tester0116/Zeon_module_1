@@ -1,0 +1,353 @@
+/* The Modal (background) */
+.modal-block {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow-y: scroll;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+.modal-block__content {
+  margin-top: 20em;
+  margin-bottom: 2rem;
+  position: relative;
+  width: 506px;
+  height: auto;
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 56px 90px;
+  border-radius: 4px;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+/* getting close icon */
+.modal-block__content > .close-icon {
+  position: absolute;
+  top: 24px;
+  right: 26px;
+}
+
+/* getting title */
+.modal-block__content > h5 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 25px;
+}
+/* getting little title */
+.modal-block__content > h6 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 30px;
+}
+
+.modal-block__inputs {
+  width: 330px;
+  background-color: #f2f2f2;
+  height: 42px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  padding: 9px 17px;
+  margin-top: 17px;
+
+  font: 400 16px 'Poppins';
+  line-height: 24px;
+}
+.modal-block__inputs:focus {
+  border: 2px solid #5ab0ff;
+}
+/* getting placeholder */
+.modal-block__inputs::placeholder {
+  font-size: 16px;
+  line-height: 24px;
+  color: #7d7d7d;
+}
+
+/* error text */
+.modal-block__inputs + .error,
+.modal-block__checkbox > .error {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #ff5437;
+  float: left;
+  margin-left: 15px;
+}
+.modal-block__checkbox > .error {
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+/* all plans div */
+.modal-block__plan-block {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+/* text 'your plan' */
+.modal-block__plan-text {
+  margin-top: 23px;
+}
+/* plans text (label) */
+.modal-block__plan {
+  position: relative;
+  cursor: pointer;
+  padding: 9px 0;
+  border-radius: 4px;
+  background-color: #fafafa;
+  border: 1px solid #0278ed;
+  color: #0278ed;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* start radio styles */
+.modal-block__plan-block > input[type='radio'] {
+  display: none;
+}
+/* start radio styles */
+
+/* for blue checked radio */
+.modal-block__plan-block
+  > input[type='radio']:checked
+  + label[class*='plan__blue'] {
+  background-color: #0278ed;
+  border: 1px solid #0278ed;
+  color: white;
+}
+/* for red checked radio */
+.modal-block__plan-block
+  > input[type='radio']:checked
+  + label[class*='plan__red'] {
+  background-color: #ff5437;
+  border: 1px solid #ff5437;
+  color: white;
+}
+/* for yellow checked radio */
+.modal-block__plan-block
+  > input[type='radio']:checked
+  + label[class*='plan__yellow'] {
+  background-color: #ff9209;
+  border: 1px solid #ff9209;
+  color: white;
+}
+/* for input which type is radio */
+.modal-block__plan-block > input[type='radio'] + label::before {
+  content: '';
+  position: absolute;
+  left: 13px;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 80% 80%;
+  background-image: none;
+}
+
+/* for checked radio */
+.modal-block__plan-block > input[type='radio']:checked + label::before {
+  background-image: url('../../assets/svg/check-icon.svg');
+}
+
+/* end radio styles */
+
+.plan__blue {
+  border: 1px solid #0278ed;
+  color: #0278ed;
+}
+
+.plan__red {
+  border: 1px solid #ff5437;
+  color: #ff5437;
+}
+
+.plan__yellow {
+  border: 1px solid #ff9209;
+  color: #ff9209;
+}
+
+/* check icon */
+#current-plan {
+  position: absolute;
+  left: 15px;
+}
+
+/* checkbox block */
+.modal-block__checkbox {
+  margin-top: 23px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox {
+  cursor: pointer;
+  margin-bottom: 0.2em;
+  width: 80px;
+  margin-left: -0.2em;
+}
+
+/* all inputs */
+.custom-checkbox > input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+/* for label label, in .custom-checkbox */
+.custom-checkbox > span {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+/* creating empty box for checkbox */
+.custom-checkbox > input[type='checkbox'] + span::before {
+  content: '';
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 2px solid #0278ed;
+  border-radius: 4px;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 80% 80%;
+}
+
+/* adding check-icon for checked  */
+.custom-checkbox > input[type='checkbox']:checked + span::before {
+  border: 2px solid #0b76ef;
+  background-color: white;
+  background-image: url('../../assets/svg/check-blue-icon.svg');
+}
+
+.modal-block__send-btn {
+  margin-left: 0;
+  margin-top: 42px;
+}
+
+.modal-block__content > .loading-block {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 13px;
+}
+
+/* getting loading text */
+.modal-block__content > .loading-block > h6 {
+  padding-top: 2px;
+
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #7e7e7e;
+}
+
+#loading-icon {
+  -webkit-animation-name: rotation;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: rotation;
+  -moz-animation-duration: 2s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -o-animation-name: rotation;
+  -o-animation-duration: 2s;
+  -o-animation-iteration-count: infinite;
+  -o-animation-timing-function: linear;
+  animation-name: rotation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {
+    top: 300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(720deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

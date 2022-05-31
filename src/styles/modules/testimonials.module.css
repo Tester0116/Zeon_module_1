@@ -1,0 +1,41 @@
+.testimonials-block {
+  background-color: #f2f2f2;
+  padding: 100px 136px;
+  text-align: center;
+}
+
+.testimonials-block .block-description {
+  font-size: 18px;
+}
+
+.testimonials-block__items {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+  gap: 16px;
+}
+
+/* getting block item */
+.testimonials-block__items > .item {
+  width: 380px;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: white;
+  text-align: left;
+
+  font-size: 16px;
+  line-height: 24px;
+  color: #222222;
+}
+
+@media only screen and (max-width: 768px) {
+  .testimonials-block {
+    margin-top: 40px;
+    padding: 100px 0;
+  }
+  .testimonials-block__items {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
