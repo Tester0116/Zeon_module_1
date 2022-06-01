@@ -1,6 +1,7 @@
 /* Burger menu button */
 
 .burger-btn svg {
+  cursor: pointer;
   height: 50px;
   position: absolute;
   width: 50px;
