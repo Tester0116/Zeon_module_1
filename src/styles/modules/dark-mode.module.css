@@ -17,7 +17,7 @@
   z-index: 3;
   background-color: var(--bg-color);
   justify-content: center;
-  margin-top: -105px;
+  margin-top: -15px;
   display: flex;
   text-align: center;
   transition: all 0.5s ease-in;
@@ -107,6 +107,6 @@
 
 @media only screen and (max-width: 768px) {
   .dark-mode {
-    margin-top: 0;
+    margin-top: -10px;
   }
 }

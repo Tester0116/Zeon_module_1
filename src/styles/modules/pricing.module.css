@@ -94,7 +94,7 @@
 
 @media only screen and (max-width: 768px) {
   .pricing-block {
-    padding: 100px 0 0 0;
+    padding: 0;
   }
   .pricing-block__price-side {
     flex-wrap: wrap;

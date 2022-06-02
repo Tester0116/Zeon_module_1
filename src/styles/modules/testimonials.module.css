@@ -35,7 +35,6 @@
 @media only screen and (max-width: 768px) {
   .testimonials-block {
     margin-top: 40px;
-    padding: 100px 0;
   }
   .testimonials-block__items {
     flex-wrap: wrap;

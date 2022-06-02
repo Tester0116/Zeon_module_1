@@ -45,9 +45,12 @@
 }
 @media only screen and (max-width: 768px) {
   .faq-block {
-    padding: 100px 20px;
+    /* padding: 0; */
   }
   .faq-block__item {
     width: 100%;
+  }
+  .faq-block > .container {
+    justify-content: flex-start;
   }
 }
