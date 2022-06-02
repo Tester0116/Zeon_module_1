@@ -50,9 +50,11 @@
 }
 
 .timer-text {
-  text-transform: lowercase;
-  display: block;
   font: 700 24px 'Poppins';
+  text-transform: lowercase;
+  margin-top: -20px;
+  margin-left: 15px;
+  display: block;
   line-height: 36px;
 }
 

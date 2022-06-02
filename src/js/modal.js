@@ -49,7 +49,10 @@ export const renderModal = (DATA) => {
     document.body.style.overflow = 'hidden'
   }
 
-  const closeModal = () => (elements.modal.style.display = 'none')
+  const closeModal = () => {
+    elements.modal.style.display = 'none'
+    document.body.style.overflow = 'scroll'
+  }
 
   document.querySelector('.close-icon').addEventListener('click', closeModal)
 
@@ -59,7 +62,7 @@ export const renderModal = (DATA) => {
 
   // When the user clicks anywhere outside of the modal, close it
   window.onclick = (event) => {
-    if (event.target == elements.modal) elements.modal.style.display = 'none'
+    if (event.target == elements.modal) closeModal()
   }
 
   // adding action for send button

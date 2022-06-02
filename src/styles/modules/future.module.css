@@ -26,11 +26,8 @@
   flex-direction: row;
 }
 
-.future-block__left-side > .btns :last-child {
-  margin-left: 10px;
-}
 .future-block__left-side > .btns > * {
-  margin-left: 0;
+  margin-left: 10px;
 }
 
 /* START RIGHT SIDE */
