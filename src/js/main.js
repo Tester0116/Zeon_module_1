@@ -1,4 +1,4 @@
-// import DATA from './config.json' assert { type: 'json' }
+import DATA from './config.json' assert { type: 'json' }
 import '../styles/style.css'
 
 import { initializeTimer } from './timer.js'
