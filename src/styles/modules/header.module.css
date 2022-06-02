@@ -7,7 +7,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 1.55em 145px;
+  padding: 1.55em calc((100% - 1168px) / 2);
   background-color: white;
   z-index: 10;
   height: 90px;
@@ -41,7 +41,23 @@
   color: white;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1200px) {
+  .main-header {
+    padding: 1.55em calc((100% - 1100px) / 2);
+  }
+}
+@media only screen and (max-width: 1120px) {
+  .main-header {
+    padding: 1.55em calc((100% - 1050px) / 2);
+  }
+}
+@media only screen and (max-width: 1050px) {
+  .main-header {
+    padding: 1.55em calc((100% - 950px) / 2);
+  }
+}
+
+@media only screen and (max-width: 850px) {
   .main-header {
     padding: 15px 20px;
     height: 70px;

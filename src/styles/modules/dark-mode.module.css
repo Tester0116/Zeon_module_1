@@ -105,7 +105,7 @@
   align-items: center;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 850px) {
   .dark-mode {
     margin-top: -10px;
   }

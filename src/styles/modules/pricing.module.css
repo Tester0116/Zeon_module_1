@@ -15,6 +15,8 @@
 /* START PRICE SIDE */
 .pricing-block__price-side {
   align-self: center;
+  justify-content: center;
+  flex-wrap: wrap;
   display: flex;
   flex-direction: row;
   gap: 16px;
@@ -92,13 +94,12 @@
   background-color: #ff9209 !important;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 850px) {
   .pricing-block {
     padding: 0;
   }
   .pricing-block__price-side {
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
   }
 }

@@ -20,20 +20,26 @@
 
 /* START LEFT SIDE */
 .speedSecurity-block__left-side > img {
-  width: 100%;
+  width: 376px;
   height: 544px;
   object-fit: cover;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1010px) {
+  .speedSecurity-block__right-side {
+    margin: 0 0 40px 0;
+  }
+  .speedSecurity-block__container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 850px) {
   .speedSecurity-block {
     padding: 0;
   }
   .speedSecurity-block__container {
     width: 85%;
-    flex-direction: column-reverse;
-  }
-  .speedSecurity-block__right-side {
-    margin: 0 0 40px 0;
   }
 }

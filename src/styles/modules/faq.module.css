@@ -43,10 +43,7 @@
   font-size: 16px;
   line-height: 24px;
 }
-@media only screen and (max-width: 768px) {
-  .faq-block {
-    /* padding: 0; */
-  }
+@media only screen and (max-width: 850px) {
   .faq-block__item {
     width: 100%;
   }

@@ -1,6 +1,6 @@
 const getElements = () => {
-  const modal = document.getElementById('modal') // Get the modal
-  const openModalBtn = document.querySelectorAll('.buy-now') // open modal button
+  const modal = document.getElementById('modal')
+  const openModalBtn = document.querySelectorAll('.buy-now')
   const sendBtn = document.querySelector('.modal-block__send-btn')
   const form = document.getElementById('form')
   const userName = document.querySelector('.user-name')

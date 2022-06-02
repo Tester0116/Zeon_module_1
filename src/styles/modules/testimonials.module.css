@@ -14,7 +14,9 @@
 
 .testimonials-block__items {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
+  justify-content: center;
   margin-top: 40px;
   gap: 16px;
 }
@@ -32,13 +34,11 @@
   color: #222222;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 850px) {
   .testimonials-block {
     margin-top: 40px;
   }
   .testimonials-block__items {
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
   }
 }

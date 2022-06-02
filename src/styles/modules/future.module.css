@@ -37,7 +37,12 @@
   object-fit: cover;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1010px) {
+  .future-block__container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   .future-block__right-side > img {
     margin-top: 50px;
   }
