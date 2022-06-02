@@ -1,5 +1,5 @@
 import DATA from '../../config.json' assert { type: 'json' }
-// import '../styles/style.css'
+import '../styles/style.css'
 import { initializeTimer } from './timer.js'
 import { renderBurger } from './burger.js'
 import { renderDark } from './dark.js'

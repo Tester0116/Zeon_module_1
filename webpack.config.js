@@ -12,6 +12,16 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, './build'),
   },
+  // devServer: {
+  //   static: {
+  //     directory: path.join(__dirname, './build'),
+  //   },
+  //   historyApiFallback: true,
+  //   hot: true,
+  //   open: true,
+  //   compress: true,
+  //   port: 3000,
+  // },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
