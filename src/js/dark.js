@@ -8,13 +8,14 @@ export const renderDark = () => {
   const html = document.querySelector('html')
 
   const darkOn = () => {
-    lightIcon.style.fill = '#fff'
-    lightIcon.nextElementSibling.style.color = '#FFF'
-
+    html.dataset.theme = 'theme-dark'
     darkText.textContent = 'dark.'
     darkModeText.textContent = 'Dark mode'
     darkIcon.nextElementSibling.style.color = '#FF9209'
     darkIcon.style.fill = '#FF9209'
+
+    lightIcon.style.fill = '#fff'
+    lightIcon.nextElementSibling.style.color = '#FFF'
   }
   const lightOn = () => {
     html.dataset.theme = 'theme-light'
