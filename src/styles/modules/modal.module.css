@@ -242,8 +242,8 @@
 }
 
 .modal-block__content > .loading-block {
+  display: none;
   margin-top: 40px;
-  display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 13px;

@@ -72,10 +72,10 @@ export const modalHandler = (DATA) => {
     e.preventDefault()
     const formData = validateInputs()
     if (formData) {
-      elements.loading.style.visibility = 'visible'
+      elements.loading.style.display = 'flex'
       setTimeout(() => {
-        elements.loading.style.visibility = 'hidden'
         closeModal()
+        elements.loading.style.display = 'none'
       }, 2000)
       console.log(formData)
     }
