@@ -64,4 +64,7 @@
   .future-block__left-side {
     width: auto;
   }
+  .future-block__right-side > img {
+    margin-right: 0;
+  }
 }
