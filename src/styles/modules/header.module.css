@@ -19,6 +19,10 @@
   flex-direction: row;
   align-items: center;
 }
+.main-header__logo {
+  cursor: pointer;
+}
+
 .main-header__links-block {
   display: flex;
   flex-direction: row;
@@ -28,7 +32,6 @@
 .main-header__links-block > li {
   margin-left: 42px;
 }
-
 .main-header__get-appbtn {
   justify-content: center;
   align-items: center;

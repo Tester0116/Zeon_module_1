@@ -2,14 +2,6 @@
   background: white;
 }
 
-.technology-block__container {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 .technology-block__left-side {
   margin-top: 77px;
   max-width: 420px;
@@ -29,7 +21,6 @@
   }
   .technology-block__container {
     flex-direction: column;
-    align-items: center;
   }
 }
 

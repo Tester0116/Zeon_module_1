@@ -3,15 +3,16 @@ export const renderDark = () => {
   const lightIcon = document.getElementById('light-icon')
   const dark = document.getElementById('dark-mode_change-dark')
   const darkIcon = document.getElementById('dark-icon')
-  const darkText = document.getElementById('dark-mode_text')
+  const darkText = document.getElementById('dark-text')
+  const darkModeText = document.getElementById('dark-mode_text')
   const html = document.querySelector('html')
 
   const darkOn = () => {
-    html.dataset.theme = 'theme-dark'
     lightIcon.style.fill = '#fff'
     lightIcon.nextElementSibling.style.color = '#FFF'
 
-    darkText.textContent = 'Dark mode'
+    darkText.textContent = 'dark.'
+    darkModeText.textContent = 'Dark mode'
     darkIcon.nextElementSibling.style.color = '#FF9209'
     darkIcon.style.fill = '#FF9209'
   }
@@ -19,7 +20,8 @@ export const renderDark = () => {
     html.dataset.theme = 'theme-light'
     lightIcon.style.fill = '#FF9209'
     lightIcon.nextElementSibling.style.color = '#FF9209'
-    darkText.textContent = 'Light mode'
+    darkText.textContent = 'light.'
+    darkModeText.textContent = 'Light mode'
 
     darkIcon.style.fill = '#000'
     darkIcon.nextElementSibling.style.color = '#000'

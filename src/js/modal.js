@@ -1,36 +1,20 @@
-const getElements = () => {
-  const modal = document.getElementById('modal')
-  const openModalBtn = document.querySelectorAll('.buy-now')
-  const sendBtn = document.querySelector('.modal-block__send-btn')
-  const form = document.getElementById('form')
-  const userName = document.querySelector('.user-name')
-  const email = document.querySelector('.email')
-  const letPLans = document.querySelectorAll('.modal-block__plan')
-  const loading = document.querySelector('.loading-block')
-  const checkboxes = document.querySelectorAll('.input-checkboxes')
-  const checkboxesName = document.querySelectorAll('.input-checkboxes__name')
-  const checkboxesError = document.querySelector('.checkbox')
-  const radioInputs = document.getElementsByName('radio-inputs')
-  const radio = document.querySelectorAll('.modal-block__plan')
-  return {
-    modal,
-    openModalBtn,
-    sendBtn,
-    form,
-    userName,
-    email,
-    letPLans,
-    loading,
-    checkboxes,
-    checkboxesName,
-    checkboxesError,
-    radioInputs,
-    radio,
-  }
+const elements = {
+  checkboxesName: document.querySelectorAll('.input-checkboxes__name'),
+  checkboxes: document.querySelectorAll('.input-checkboxes'),
+  letPLans: document.querySelectorAll('.modal-block__plan'),
+  sendBtn: document.querySelector('.modal-block__send-btn'),
+  radioInputs: document.getElementsByName('radio-inputs'),
+  radio: document.querySelectorAll('.modal-block__plan'),
+  checkboxesError: document.querySelector('.checkbox'),
+  openModalBtn: document.querySelectorAll('.buy-now'),
+  loading: document.querySelector('.loading-block'),
+  userName: document.querySelector('.user-name'),
+  email: document.querySelector('.email'),
+  modal: document.getElementById('modal'),
+  form: document.getElementById('form'),
 }
-export const renderModal = (DATA) => {
+export const modalHandler = (DATA) => {
   // When the user clicks on the button =>
-  const elements = getElements()
 
   let activeRadioLabels = ''
 
@@ -88,42 +72,63 @@ export const renderModal = (DATA) => {
     e.preventDefault()
     const formData = validateInputs()
     if (formData) {
-      elements.loading.classList.remove('dn')
+      elements.loading.style.visibility = 'visible'
       setTimeout(() => {
+        elements.loading.style.visibility = 'hidden'
         closeModal()
-        elements.loading.classList.add('dn')
       }, 2000)
       console.log(formData)
     }
+    return
   }
 
   const validateInputs = () => {
+    let isValid = false
     const userNameValue = elements.userName.value.trim()
     const emailValue = elements.email.value.trim()
     const checkboxText = activeCheckboxesText()
     // check up for name
-    if (userNameValue === '') setError(elements.userName, 'required field')
-    else if (userNameValue.length < 3)
+    if (userNameValue === '') {
+      setError(elements.userName, 'required field')
+      isValid = false
+    } else if (userNameValue.length < 3) {
       setError(elements.userName, 'should be more then 3 symbols')
-    else setSuccess(elements.userName)
+      isValid = false
+    } else {
+      setSuccess(elements.userName)
+      isValid = true
+    }
 
     // check up for email
-    if (emailValue === '') setError(elements.email, 'required field')
-    else if (!isValidEmail(emailValue))
+    if (emailValue === '') {
+      setError(elements.email, 'required field*')
+      isValid = false
+    } else if (!isValidEmail(emailValue)) {
       setError(elements.email, 'Provide a valid email')
-    else setSuccess(elements.email)
+      isValid = false
+    } else {
+      setSuccess(elements.email)
+      isValid = true
+    }
 
     // check up for checkboxes
-    if (checkboxText.length === 0)
-      return setError(elements.checkboxesError, 'required field')
-    else setSuccess(elements.checkboxesError)
-
-    return {
-      name: userNameValue,
-      email: emailValue,
-      plan: activeRadioLabels.trim(),
-      social: checkboxText,
+    if (checkboxText.length === 0) {
+      setError(elements.checkboxesError, 'required field*')
+      isValid = false
+    } else {
+      setSuccess(elements.checkboxesError)
+      isValid = true
     }
+
+    if (isValid) {
+      return {
+        name: userNameValue,
+        email: emailValue,
+        plan: activeRadioLabels.trim(),
+        social: checkboxText,
+      }
+    }
+    return false
   }
 
   const setSuccess = (element) => {
@@ -153,10 +158,4 @@ export const renderModal = (DATA) => {
   }
 
   elements.form.addEventListener('submit', sendToBack)
-  elements.sendBtn.addEventListener('click', sendToBack)
-  elements.userName.addEventListener('input', validateInputs)
-  elements.email.addEventListener('input', validateInputs)
-  elements.checkboxes.forEach((checkbox) =>
-    checkbox.addEventListener('input', validateInputs)
-  )
 }

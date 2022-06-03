@@ -21,9 +21,36 @@
 .features-block > h4 {
   margin: 0 auto;
   margin-top: 5px;
-  font-size: 32px;
-  line-height: 36px;
   max-width: 500px;
+
+  font: 400 32px 'Poppins';
+  line-height: 36px;
+}
+
+/* adding uniq color to item h6 */
+/* 1 */
+.features-block__items > :nth-child(1) > .features-block__item_text-block > h6 {
+  color: #0278ed;
+}
+/* 2 */
+.features-block__items > :nth-child(2) > .features-block__item_text-block > h6 {
+  color: #ff5437;
+}
+/* 3 */
+.features-block__items > :nth-child(3) > .features-block__item_text-block > h6 {
+  color: #ff9209;
+}
+/* 4 */
+.features-block__items > :nth-child(4) > .features-block__item_text-block > h6 {
+  color: #e738ce;
+}
+/* 5 */
+.features-block__items > :nth-child(5) > .features-block__item_text-block > h6 {
+  color: #00c6df;
+}
+/* 6 */
+.features-block__items > :nth-child(6) > .features-block__item_text-block > h6 {
+  color: #b25df8;
 }
 
 .features-block__items {
@@ -67,9 +94,8 @@
 }
 /* getting item title */
 .features-block__item_text-block > h6 {
-  font-size: 24px;
+  font: 400 24px 'Poppins';
   line-height: 30px;
-  color: #0278ed;
   margin-top: 18px;
 }
 

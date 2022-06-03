@@ -3,6 +3,10 @@
   margin-top: 45px;
 }
 
+.future-block__left-side {
+  margin-right: 200px;
+}
+
 /* getting title */
 .future-block__left-side > h3 {
   margin-top: 11px;
@@ -38,10 +42,11 @@
 }
 
 @media only screen and (max-width: 1010px) {
+  .future-block__left-side {
+    margin: 0 0 40px 0;
+  }
   .future-block__container {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
   }
   .future-block__right-side > img {
     margin-top: 50px;

@@ -84,10 +84,6 @@
   float: left;
   margin-left: 15px;
 }
-.modal-block__checkbox > .error {
-  margin-top: -20px;
-  margin-bottom: 20px;
-}
 
 /* all plans div */
 .modal-block__plan-block {
@@ -199,7 +195,7 @@
   cursor: pointer;
   margin-bottom: 0.2em;
   width: 80px;
-  margin-left: -0.2em;
+  margin: 2px 50px 2px 0;
 }
 
 /* all inputs */
@@ -221,12 +217,12 @@
 .custom-checkbox > input[type='checkbox'] + span::before {
   content: '';
   display: inline-block;
-  width: 25px;
-  height: 25px;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
   flex-grow: 0;
-  border: 2px solid #0278ed;
-  border-radius: 4px;
+  border: 3px solid #0278ed;
+  border-radius: 5px;
   margin-right: 0.5em;
   background-repeat: no-repeat;
   background-position: center center;
@@ -235,7 +231,7 @@
 
 /* adding check-icon for checked  */
 .custom-checkbox > input[type='checkbox']:checked + span::before {
-  border: 2px solid #0b76ef;
+  border: 3px solid #0b76ef;
   background-color: white;
   background-image: url('../../assets/svg/check-blue-icon.svg');
 }

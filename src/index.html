@@ -76,7 +76,6 @@
 
         <!-- start links -->
         <div class="modal-block__checkbox">
-          <span class="error"></span>
           <!-- label Facebook -->
           <div class="checkbox">
             <label class="custom-checkbox">
@@ -105,11 +104,12 @@
               <span class="input-checkboxes__name">Other</span>
             </label>
           </div>
+          <span class="error"></span>
         </div>
         <!-- end links -->
 
         <button class="btn modal-block__send-btn" type="submit">send</button>
-        <div class="loading-block dn">
+        <div class="loading-block" style="visibility: hidden">
           <img
             id="loading-icon"
             src="./assets/svg/loading-icon.svg"
@@ -459,7 +459,7 @@
       <section class="dark-mode">
         <div class="dark-mode__block">
           <h6 class="block-title" id="dark-mode_text">Dark mode</h6>
-          <h1>Also available in <span>dark.</span></h1>
+          <h1>Also available in <span id="dark-text">dark.</span></h1>
           <p>
             Don't get blinded when using the H(app)y app at night, just turn off
             the lights. Lorem ipsum dolor sit amet.
@@ -690,7 +690,7 @@
     <footer class="main-footer">
       <div class="icons">
         <img
-          id="to-header"
+          class="to-header"
           src="./assets/svg/happy-logo_footer.svg"
           alt="logo icon"
         />

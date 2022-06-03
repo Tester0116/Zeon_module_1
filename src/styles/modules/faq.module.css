@@ -3,10 +3,14 @@
   background-color: #e5e5e5;
   color: #222222;
 }
+.faq-block > .container {
+  width: 85%;
+  justify-content: flex-start;
+}
 
 /* getting FAQ text */
 .faq-block__text-block > h1 {
-  font-size: 32px;
+  font: 400 32px 'Poppins';
   line-height: 36px;
 }
 
