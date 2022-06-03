@@ -7,23 +7,24 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0 224px;
-}
-.static-block > .statics {
-  align-items: center;
+  padding: 0px 270px 0 244px;
 }
 
 /* getting statics block */
 .static-block > .statics {
   text-align: center;
+  align-items: center;
   margin-bottom: 20px;
+}
+.static-block > .statics:nth-child(2) {
+  padding-right: 20px;
 }
 
 /* getting statics title */
 .static-block > .statics > h1 {
   font: 400 96px 'Poppins';
   line-height: 96px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 /* getting statics discriptions */

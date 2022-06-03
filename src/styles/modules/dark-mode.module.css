@@ -23,8 +23,9 @@
   transition: all 0.5s ease-in;
 }
 .dark-mode__block {
-  padding: 100px 0;
+  padding: 100px 0 160px;
   width: 623px;
+  text-align: center;
 }
 
 /* text dark mode */
@@ -48,7 +49,8 @@
 /* dark mode discription */
 .dark-mode__block > p {
   color: var(--text-color);
-  width: 100%;
+  max-width: 95%;
+  margin: auto;
   margin-top: 14px;
   font-size: 18px;
   line-height: 24px;
@@ -56,7 +58,8 @@
 
 /* dark mode phone image */
 .dark-mode__block > img {
-  margin-top: 36px;
+  width: 100%;
+  margin-top: 40px;
   object-fit: cover;
 }
 

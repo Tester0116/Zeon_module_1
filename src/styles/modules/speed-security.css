@@ -1,19 +1,21 @@
 .speedSecurity-block {
   z-index: 2;
   position: relative;
-  margin-top: -205px;
+  margin-top: -200px;
   background: #f2f2f2;
 }
 
 .speedSecurity-block__right-side {
-  margin-top: 77px;
+  margin-top: 70px;
   max-width: 420px;
   margin-left: 195px;
 }
 
 /* START LEFT SIDE */
 .speedSecurity-block__left-side > img {
+  width: 100%;
   object-fit: cover;
+  margin-left: 20px;
 }
 
 @media only screen and (max-width: 1010px) {
@@ -31,5 +33,10 @@
   }
   .speedSecurity-block__container {
     width: 85%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .speedSecurity-block__left-side > img {
+    margin: 0;
   }
 }

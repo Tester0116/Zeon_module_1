@@ -6,6 +6,7 @@
 
 .testimonials-block__text-block {
   margin: 0 auto;
+  padding-bottom: 20px;
 }
 
 .testimonials-block .block-description {
@@ -17,7 +18,7 @@
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 10px;
   gap: 16px;
 }
 
@@ -26,7 +27,7 @@
   width: 380px;
   padding: 30px;
   border-radius: 20px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   text-align: left;
 
   font-size: 16px;
@@ -40,5 +41,8 @@
   }
   .testimonials-block__items {
     align-items: center;
+  }
+  .testimonials-block__items > .item {
+    width: 100%;
   }
 }

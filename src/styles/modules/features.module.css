@@ -3,7 +3,7 @@
   position: relative;
   margin-top: -205px;
   padding-top: 100px;
-  padding-bottom: 80px;
+  padding-bottom: 53px;
   text-align: center;
   background-color: #222222;
 }
@@ -22,7 +22,6 @@
   margin: 0 auto;
   margin-top: 5px;
   max-width: 500px;
-
   font: 400 32px 'Poppins';
   line-height: 36px;
 }
@@ -64,6 +63,7 @@
 }
 .features-block__item {
   width: 380px;
+  height: 490px;
   background-color: white;
   border-radius: 20px;
   position: relative;

@@ -1,18 +1,23 @@
 .future-block {
   padding-left: -20px;
 }
+.future-block > .container {
+  padding-top: 90px;
+}
 .future-block__left-side {
   width: 420px;
-  margin-top: 45px;
+  margin-top: 50px;
+  margin-right: 190px;
 }
 
-.future-block__left-side {
-  margin-right: 200px;
+.btns > .btn {
+  height: 40px;
+  width: 148px;
+  border-radius: 4px;
 }
-
 /* getting title */
 .future-block__left-side > h3 {
-  margin-top: 11px;
+  margin-top: 5px;
   font: normal 3.375rem 'Poppins';
   line-height: 60px;
   color: #222222;
@@ -28,18 +33,20 @@
 
 /* getting buttons block(div) */
 .future-block__left-side > .btns {
-  margin-top: 20px;
+  margin-top: 15px;
   display: flex;
   flex-direction: row;
 }
 
 .future-block__left-side > .btns > * {
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 /* START RIGHT SIDE */
 .future-block__right-side > img {
+  width: 100%;
   object-fit: cover;
+  margin-right: 30px;
 }
 
 @media only screen and (max-width: 1010px) {
@@ -51,5 +58,10 @@
   }
   .future-block__right-side > img {
     margin-top: 50px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .future-block__left-side {
+    width: auto;
   }
 }

@@ -3,14 +3,16 @@
 }
 
 .technology-block__left-side {
-  margin-top: 77px;
+  margin-top: 75px;
   max-width: 420px;
   margin-right: 195px;
 }
 
 /* START RIGHT SIDE */
 .technology-block__right-side > img {
+  width: 100%;
   object-fit: cover;
+  margin-right: 20px;
 }
 
 @media only screen and (max-width: 1010px) {

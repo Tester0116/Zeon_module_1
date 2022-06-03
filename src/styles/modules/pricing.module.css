@@ -47,7 +47,7 @@
 /* getting price-price */
 .pricing-block__price-side > .price_item > h1 {
   font: 400 108px 'Poppins';
-  line-height: 124px;
+  line-height: 90px;
   letter-spacing: 8px;
   color: #0278ed;
 }
@@ -55,7 +55,7 @@
 /* getting price-text */
 .pricing-block__price-side > .price_item > h6 {
   font: 400 14px 'Poppins';
-  margin-top: 25px;
+  margin-top: 45px;
   line-height: 20px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -101,5 +101,8 @@
   .pricing-block__price-side {
     flex-wrap: wrap;
     align-items: center;
+  }
+  .pricing-block__price-side > .price_item {
+    width: 100%;
   }
 }
