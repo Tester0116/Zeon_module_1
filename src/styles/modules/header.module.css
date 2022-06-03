@@ -36,7 +36,6 @@
   justify-content: center;
   align-items: center;
   display: flex;
-
   font-size: 14px;
   line-height: 18px;
   letter-spacing: 2px;
@@ -54,13 +53,7 @@
     padding: 1.55em calc((100% - 1050px) / 2);
   }
 }
-@media only screen and (max-width: 1050px) {
-  .main-header {
-    padding: 1.55em calc((100% - 950px) / 2);
-  }
-}
-
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 1100px) {
   .main-header {
     padding: 15px 20px;
     height: 70px;

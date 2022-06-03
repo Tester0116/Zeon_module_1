@@ -10,8 +10,6 @@
 
 /* START RIGHT SIDE */
 .technology-block__right-side > img {
-  width: 376px;
-  height: 744px;
   object-fit: cover;
 }
 
@@ -19,7 +17,7 @@
   .technology-block__left-side {
     margin: 0 0 40px 0;
   }
-  .technology-block__container {
+  .technology-block > .container {
     flex-direction: column;
   }
 }

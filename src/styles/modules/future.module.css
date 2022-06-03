@@ -1,5 +1,8 @@
+.future-block {
+  padding-left: -20px;
+}
 .future-block__left-side {
-  max-width: 420px;
+  width: 420px;
   margin-top: 45px;
 }
 
@@ -36,8 +39,6 @@
 
 /* START RIGHT SIDE */
 .future-block__right-side > img {
-  width: 376px;
-  height: 744px;
   object-fit: cover;
 }
 

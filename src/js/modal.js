@@ -13,11 +13,11 @@ const elements = {
   modal: document.getElementById('modal'),
   form: document.getElementById('form'),
 }
-export const modalHandler = (DATA) => {
-  // When the user clicks on the button =>
 
+export const modalHandler = (DATA) => {
   let activeRadioLabels = ''
 
+  // When the user clicks on the button =>
   const setActiveRadio = (element) => {
     elements.radioInputs.forEach((a) => {
       activeRadioLabels = a.nextElementSibling.textContent
@@ -58,7 +58,7 @@ export const modalHandler = (DATA) => {
   elements.radio.forEach((item) => {
     item.addEventListener('click', () => (activeRadioLabels = item.textContent))
   })
-  const activeCheckboxesText = () => {
+  let activeCheckboxesText = () => {
     let texts = []
     elements.checkboxes.forEach((checkbox, index) => {
       if (checkbox.checked === true) {
@@ -72,55 +72,60 @@ export const modalHandler = (DATA) => {
     e.preventDefault()
     const formData = validateInputs()
     if (formData) {
-      elements.loading.style.display = 'flex'
+      elements.loading.style = 'display: flex'
       setTimeout(() => {
         closeModal()
-        elements.loading.style.display = 'none'
+        elements.loading.style = 'display: none'
+        elements.userName.value = ''
+        elements.email.value = ''
+        elements.checkboxes.forEach((checkbox) => (checkbox.checked = false))
       }, 2000)
       console.log(formData)
     }
-    return
   }
 
   const validateInputs = () => {
-    let isValid = false
+    let isValidName = false
+    let isValidEmailValue = false
+    let isValidcheckBox = false
+
     const userNameValue = elements.userName.value.trim()
     const emailValue = elements.email.value.trim()
     const checkboxText = activeCheckboxesText()
     // check up for name
     if (userNameValue === '') {
       setError(elements.userName, 'required field')
-      isValid = false
+      isValidName = false
     } else if (userNameValue.length < 3) {
       setError(elements.userName, 'should be more then 3 symbols')
-      isValid = false
+      isValidName = false
     } else {
       setSuccess(elements.userName)
-      isValid = true
+      isValidName = true
     }
 
     // check up for email
     if (emailValue === '') {
       setError(elements.email, 'required field*')
-      isValid = false
+      isValidEmailValue = false
     } else if (!isValidEmail(emailValue)) {
       setError(elements.email, 'Provide a valid email')
-      isValid = false
+      isValidEmailValue = false
     } else {
       setSuccess(elements.email)
-      isValid = true
+      isValidEmailValue = true
     }
 
     // check up for checkboxes
     if (checkboxText.length === 0) {
       setError(elements.checkboxesError, 'required field*')
-      isValid = false
+      isValidcheckBox = false
     } else {
       setSuccess(elements.checkboxesError)
-      isValid = true
+      isValidcheckBox = true
     }
 
-    if (isValid) {
+    if (isValidName && isValidEmailValue && isValidcheckBox) {
       return {
         name: userNameValue,
         email: emailValue,
